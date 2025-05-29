@@ -8,12 +8,23 @@ import streamlit as st
 import openai
 from dotenv import load_dotenv
 
-# ——— CONFIG ———
-load_dotenv()  # load .env (ensure it’s next to app.py)
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# ——— CONFIG ——— for Local
+#load_dotenv()  # load .env (ensure it’s next to app.py)
+#openai.api_key = os.getenv("OPENAI_API_KEY")
+#if not openai.api_key:
+    #st.error("OPENAI_API_KEY not found in environment. Check your .env file.")
+    #st.stop()
+
+# ——— CONFIG ——— for Streamlit Cloud Deployment
+# Pull your key from Streamlit Cloud’s secrets
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+
 if not openai.api_key:
-    st.error("OPENAI_API_KEY not found in environment. Check your .env file.")
+    st.error("OPENAI_API_KEY not found in secrets. Check your Streamlit Cloud settings.")
     st.stop()
+
+
+
 
 # ——— SESSION STATE SETUP ———
 if "reviews" not in st.session_state:
