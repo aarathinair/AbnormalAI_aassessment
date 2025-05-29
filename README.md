@@ -4,6 +4,7 @@
 
 **Video Demo:** A short walkthrough video showcasing the end-to-end flow—from incident input, draft generation, tone scoring, approval gating, publishing, to feedback capture—is available at: [Demo Video Link](#) 
 
+Deployed App URL: https://abnormalaiaassessment-idhtepbke9psjncj3ugi2f.streamlit.app/
 
 ---
 
